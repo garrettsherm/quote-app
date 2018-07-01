@@ -9,7 +9,9 @@ class AppForm extends Component {
     serviceChange: PropTypes.func,
     footageChange: PropTypes.func,
     feature: PropTypes.object,
-    addFeature: PropTypes.func
+    addFeature: PropTypes.func,
+    express: PropTypes.string,
+    expressChange: PropTypes.func
   };
 
   render(){
@@ -52,7 +54,7 @@ class AppForm extends Component {
               </div>
               <div>
                 <h4>How many squarefeet is your house</h4>
-                <input type="text" name="houseSize" onChange={this.props.footageChange} />
+                <input type="text" value={this.props.footage} name="houseSize" onChange={this.props.footageChange} />
               </div>
               <div>
                 <h4>Need any additional features?</h4>
@@ -64,6 +66,14 @@ class AppForm extends Component {
                   <label>Window Seal Cleaning</label>
                   <input type="checkbox" value="sealing" checked={this.props.features.seal} onClick={this.props.addFeature} />
                 </div>
+              </div>
+              <div>
+                <h4>Do you want to pay extra for express cleaning?</h4>
+                <p>Under an hour guaranteed!</p>
+                <select value={this.props.express} onChange={this.props.expressChange}>
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
               </div>
             </form>
           </div>

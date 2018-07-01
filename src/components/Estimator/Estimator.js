@@ -6,7 +6,8 @@ class Estimator extends Component {
   static propTypes = {
     features: PropTypes.object,
     footage: PropTypes.number,
-    service: PropTypes.string
+    service: PropTypes.string,
+    express: PropTypes.string
   };
 
   render(){
@@ -32,7 +33,7 @@ class Estimator extends Component {
 
     if(this.props.features.eco) totalCost += 10;
     if(this.props.features.seal) totalCost += 40;
-
+    if(this.props.express == "yes") totalCost *= 1.5;
 
     return(
       <div>
@@ -40,9 +41,10 @@ class Estimator extends Component {
         <p>Service: {this.props.service}</p>
         <p>footage: {this.props.footage}</p>
         <p>features: {featureList.map(feature => (
-            <span>{feature}, </span>
+            <span key={feature}>{feature}, </span>
           ))}</p>
-        <p>Total: {totalCost}</p>
+        <p>Express: {this.props.express}</p>
+        <p><strong>Total: {totalCost}</strong></p>
       </div>
     );
   }
