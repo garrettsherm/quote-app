@@ -1,0 +1,6 @@
+{
+  "name": "Estimator",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Estimator.js"
+}
