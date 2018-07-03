@@ -11,7 +11,7 @@ class HouseSize extends Component {
 	render(){
 		return(
 			<div className="form-section">
-	      <h4>How many squarefeet is your house</h4>
+	      <h4>How many squarefeet is your house?</h4>
 	      <div className="form-group">
 	      	<input 
 	      		className="form-control" 

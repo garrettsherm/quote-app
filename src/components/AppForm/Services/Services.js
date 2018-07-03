@@ -12,7 +12,7 @@ class Services extends Component {
 	render(){
 		return(
 			<div className="form-section">
-		    <h4>What Services Do you Require</h4>
+		    <h4>What Services Do you Require?</h4>
 		    <div className="form-group">
 			    <div className="form-check form-check-inline">
 			      <input 

@@ -26,10 +26,11 @@ class App extends Component {
   }
 
   handleServiceChange(e){
-    let newStep = 1;
-    if (e.target.value === 'interior' || 
+    let newStep = this.state.step;
+    if ((e.target.value === 'interior' || 
         e.target.value === 'exterior' || 
-        e.target.value === 'both'){
+        e.target.value === 'both') &&
+        newStep < 2){
       newStep = 2;
     }
     this.setState({
@@ -40,9 +41,11 @@ class App extends Component {
 
   handleFootageChange(e){
     const newFootage = parseInt(e.target.value);
-    let newStep = 2;
-    if(newFootage > 0){
+    let newStep = this.state.step;
+    if(newFootage > 500){
       newStep = 3;
+    } else {
+      newStep = 2;
     }
     this.setState({
       footage: newFootage || 0,
@@ -81,7 +84,7 @@ class App extends Component {
         <Header />
         <div id="app-container" className="container">
           <div className="row">
-            <div className="col-8">
+            <div className="col-md-8">
               <AppForm 
                 footageChange={this.handleFootageChange} 
                 serviceChange={this.handleServiceChange} 
@@ -94,7 +97,7 @@ class App extends Component {
                 expressChange={this.handleExpressChange}
               />
             </div>
-            <div className="col-4">
+            <div className="col-md-4">
               <Estimator 
                 service={this.state.service} 
                 footage={this.state.footage} 

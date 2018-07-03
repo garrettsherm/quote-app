@@ -1,13 +1,12 @@
-
-#appform-container h4 {
-	font-size: 22px;
-	font-weight: bold;
-}
-
-.form-section {
+#estimator-container {
 	background-color: #e0e0e0;
 	padding: 1rem;
 	border-radius: 4px;
 	box-shadow: 0 8px 6px -6px black;
 	margin-bottom: 2rem;
+}
+
+#estimator-container h2 {
+	font-size: 25px;
+	font-weight: bold;
 }
