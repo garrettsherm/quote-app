@@ -9,13 +9,14 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      service: 'interior',
+      service: '',
       footage: 0,
       features: {
         eco: false,
         seal: false
       },
-      express: 'no'
+      express: 'no',
+      step: 1
     }
 
     this.handleServiceChange = this.handleServiceChange.bind(this);
@@ -25,14 +26,27 @@ class App extends Component {
   }
 
   handleServiceChange(e){
+    let newStep = 1;
+    if (e.target.value === 'interior' || 
+        e.target.value === 'exterior' || 
+        e.target.value === 'both'){
+      newStep = 2;
+    }
     this.setState({
-      service: e.target.value
+      service: e.target.value,
+      step: newStep
     });
   }
 
   handleFootageChange(e){
+    const newFootage = parseInt(e.target.value);
+    let newStep = 2;
+    if(newFootage > 0){
+      newStep = 3;
+    }
     this.setState({
-      footage: parseInt(e.target.value) || 0
+      footage: newFootage || 0,
+      step: newStep
     });
   }
 
@@ -76,6 +90,7 @@ class App extends Component {
                 footage={this.state.footage}
                 addFeature={this.handleAddFeature}
                 express={this.state.express}
+                step={this.state.step}
                 expressChange={this.handleExpressChange}
               />
             </div>
@@ -85,6 +100,7 @@ class App extends Component {
                 footage={this.state.footage} 
                 features={this.state.features}
                 express={this.state.express}  
+                step={this.state.step}
               />
             </div>        
           </div>

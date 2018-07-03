@@ -10,15 +10,30 @@ class Features extends Component {
 
 	render(){
 		return(
-			<div>
+			<div className="form-section">
 		    <h4>Need any additional features?</h4>
-		    <div>
-		      <label>Eco Friendly Cleaning Solution</label>
-		      <input type="checkbox" value="eco-cleaning" checked={this.props.features.eco} onClick={this.props.addFeature} />
-		    </div>
-		    <div>
-		      <label>Window Seal Cleaning</label>
-		      <input type="checkbox" value="sealing" checked={this.props.features.seal} onClick={this.props.addFeature} />
+		    <div className="form-group">
+			    <div className="form-check form-check-inline">
+			      <input 
+			      	className="form-check-input"
+							type="checkbox" 
+							value="eco-cleaning" 
+							checked={this.props.features.eco} 
+							onClick={this.props.addFeature} 
+						/>
+			      <label className="form-check-label">Eco Friendly Cleaning Solution</label>
+			    </div>
+			    <div className="form-check form-check-inline">
+			      <input 			 
+			      	className="form-check-input"
+							type="checkbox" 
+							value="sealing" 
+							checked={this.props.features.seal} 
+							onClick={this.props.addFeature} 
+						/>
+						<label className="form-check-label">Window Seal Cleaning</label>
+
+			    </div>
 		    </div>
 		  </div>
 		);

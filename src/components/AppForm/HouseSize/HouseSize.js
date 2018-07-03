@@ -10,9 +10,17 @@ class HouseSize extends Component {
 
 	render(){
 		return(
-	  	<div>
+			<div className="form-section">
 	      <h4>How many squarefeet is your house</h4>
-	      <input type="text" value={this.props.footage} name="houseSize" onChange={this.props.footageChange} />
+	      <div className="form-group">
+	      	<input 
+	      		className="form-control" 
+	      		type="text" 
+	      		value={this.props.footage} 
+	      		name="houseSize" 
+	      		onChange={this.props.footageChange} 
+	      	/>
+	    	</div>
 	    </div>
 		);
 	}

@@ -4,6 +4,7 @@ import Services from './Services';
 import HouseSize from './HouseSize';
 import Features from './Features';
 import Express from './Express';
+import './AppForm.css';
 
 class AppForm extends Component {
 
@@ -22,11 +23,11 @@ class AppForm extends Component {
     return(
       <div className="container-fluid">
         <div className="row-fluid">
-          <div className="col-12">
-            <Services service={this.props.service} serviceChange={this.props.serviceChange} />
-            <HouseSize footage={this.props.footage} footageChange={this.props.footageChange} />
-            <Features features={this.props.features} addFeature={this.props.addFeature} />
-            <Express express={this.props.express} expressChange={this.props.expressChange} />
+          <div id ="appform-container" className="col-12">
+            {this.props.step >= 1 && <Services service={this.props.service} serviceChange={this.props.serviceChange} />}
+            {this.props.step >= 2 && <HouseSize footage={this.props.footage} footageChange={this.props.footageChange} />}
+            {this.props.step >= 3 && <Features features={this.props.features} addFeature={this.props.addFeature} />}
+            {this.props.step >= 3 && <Express express={this.props.express} expressChange={this.props.expressChange} />}
           </div>
         </div>
       </div>
