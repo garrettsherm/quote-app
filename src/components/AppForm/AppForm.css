@@ -11,3 +11,32 @@
 	box-shadow: 0 8px 6px -6px black;
 	margin-bottom: 2rem;
 }
+
+.form-transition-enter {
+	opacity: .01;
+	transition: opacity 5000ms ease-in;
+	background: red;
+}
+
+.form-transition-exit {
+	opacity: 1;
+	transition: opacity 1000ms ease-in;
+}
+
+.fady-enter  {
+	opacity: 0.01;
+}
+
+.fady-enter.fady-enter-active {
+	opacity: 1;
+	transition: opacity 1000ms ease-in;
+}
+
+.fady-exit  {
+	opacity: 1;
+}
+
+.fady-exit.fady-exit-active {
+	opacity: .01;
+	transition: opacity 1000ms ease-in;
+}
