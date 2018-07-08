@@ -1,34 +1,36 @@
+// Node Modules
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+// Components
 import Services from './Services';
 import HouseSize from './HouseSize';
 import Features from './Features';
 import Express from './Express';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+// Styles
 import './AppForm.css';
 
+// Render form component for window cleaning app
 class AppForm extends Component {
 
+  // Props this component receives   
   static propTypes = {
-    service: PropTypes.string,
-    serviceChange: PropTypes.func,
-    footageChange: PropTypes.func,
-    features: PropTypes.object,
-    footage: PropTypes.number,
-    addFeature: PropTypes.func,
-    express: PropTypes.string,
-    expressChange: PropTypes.func,
-    step: PropTypes.number
+    service: PropTypes.string.isRequired,
+    serviceChange: PropTypes.func.isRequired,
+    footageChange: PropTypes.func.isRequired,
+    features: PropTypes.object.isRequired,
+    footage: PropTypes.number.isRequired,
+    addFeature: PropTypes.func.isRequired,
+    express: PropTypes.string.isRequired,
+    expressChange: PropTypes.func.isRequired,
+    step: PropTypes.number.isRequired
   };
 
+  // conditionally render HouseSize, Features, & Express components
+  //TransitionGroup & CSSTransition are used for animations
   render(){
-
-    let houseEl = null;
-
-    if(this.props.step >= 2){
-      houseEl = <HouseSize key="footage-form" footage={this.props.footage} footageChange={this.props.footageChange} />;
-    }
-
     return(
       <div className="container-fluid">
         <div className="row-fluid">

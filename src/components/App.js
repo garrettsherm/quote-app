@@ -1,11 +1,18 @@
+// Node Modules
 import React, { Component } from 'react';
-import './App.css';
+
+//Components
 import Header from './Header';
 import AppForm from './AppForm';
 import Estimator from './Estimator';
 
+// Styles 
+import './App.css';
+
+//App component to render SPA
 class App extends Component {
 
+  // Constructor to define state and bind functions
   constructor(){
     super();
     this.state = {
@@ -25,6 +32,8 @@ class App extends Component {
     this.handleExpressChange = this.handleExpressChange.bind(this);
   }
 
+  // Function to handle changes to first form part
+  // On change to valid option allow move to next form step
   handleServiceChange(e){
     let newStep = this.state.step;
     if ((e.target.value === 'interior' || 
@@ -38,9 +47,10 @@ class App extends Component {
       step: newStep
     });
   }
-
+  // Function to handle changes to second form part
+  // On change to valid option allow move to next form step
   handleFootageChange(e){
-    const newFootage = parseInt(e.target.value);
+    const newFootage = parseInt(e.target.value, 10);
     let newStep = this.state.step;
     if(newFootage > 500){
       newStep = 3;
@@ -53,12 +63,14 @@ class App extends Component {
     });
   }
 
+  // Function to handle changes to third form part
   handleExpressChange(e){
     this.setState({
       express: e.target.value
     });
   }
 
+  // Function to handle changes to third form part
   handleAddFeature(e){
     if(e.target.value === 'eco-cleaning'){
       this.setState({
