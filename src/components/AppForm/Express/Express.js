@@ -10,8 +10,8 @@ const Express = (props) => (
     <div className="form-group">	      
       <select 
       className="form-control"
-      value={this.props.express} 
-      onChange={this.props.expressChange}
+      value={props.express} 
+      onChange={props.expressChange}
       >
         <option value="no">No</option>
         <option value="yes">Yes</option>
