@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-See the project deployed to github pages here https://garrettsherm.github.io/quote-app/
+See the application deployed to heroku here https://quote-app-garrettsherm.herokuapp.com.
 
 ## Installation
 
